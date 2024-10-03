@@ -36,6 +36,8 @@ public class Assignment_6_4 {
 				inp_year = inp.nextInt();
 				if (inp_year >=0) {
 					valid = true;
+				} else {
+					System.out.println("Invalid input. Please enter a valid integer: ");
 				}
 			} catch (InputMismatchException e){
 				System.out.println("Invalid input. Please enter a valid integer: ");
