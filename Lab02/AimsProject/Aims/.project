@@ -14,4 +14,27 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/Design</name>
+			<type>2</type>
+			<location>/media/khanhtty/551473877464395A/IT3100E.744517.20241.20235953.Tran_Thi_Yen_Khanh/Lab02/Design</location>
+		</link>
+		<link>
+			<name>src/Design/Requirement</name>
+			<type>2</type>
+			<location>/media/khanhtty/551473877464395A/IT3100E.744517.20241.20235953.Tran_Thi_Yen_Khanh/Lab02/Requirement</location>
+		</link>
+	</linkedResources>
+	<filteredResources>
+		<filter>
+			<id>1730734944985</id>
+			<name></name>
+			<type>30</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>node_modules|\.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
 </projectDescription>
