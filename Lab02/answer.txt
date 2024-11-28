@@ -2,3 +2,11 @@ Question:
 - If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
 Answer:
 - No, because both title and category are String, so Java cannot  know which constructor to call when a String is passed.
+
+Question:
+After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain? 
+--> Because java is a pass-by-value language, so we just send te copy of 2 object to function.
+
+After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed? 
+--> Because we change the data of the reference of the jungleDVD object.
+ 
