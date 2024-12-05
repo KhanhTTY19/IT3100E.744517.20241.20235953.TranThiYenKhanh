@@ -1,47 +1,71 @@
 package hust.soict.dsai.store;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 
 public class Store {
-	private DigitalVideoDisc[] itemsInStore;
+	private List<Media> itemsInStore = new ArrayList<Media>();
 	private static int nbItemInStore;
 	
 	public static int getNbItemInStore() {
 		return nbItemInStore;
 	}
-	
-	public DigitalVideoDisc[] getItemsInStore() {
-			return itemsInStore;
-		}
-	
-	public void addDVD(DigitalVideoDisc newDisc) {
-		if (this.itemsInStore == null) {
-			this.itemsInStore = new DigitalVideoDisc[1];
-			this.itemsInStore[0] = newDisc;
-			this.nbItemInStore = 1;
-		} 
-		else { 
-			this.nbItemInStore++;
-			this.itemsInStore = Arrays.copyOf(this.itemsInStore, this.nbItemInStore);
-			itemsInStore[this.nbItemInStore - 1] = newDisc;
-		}
-		System.out.println("Successfully added an DVD to store.");
-	}
-	
-	public void removeDVD(DigitalVideoDisc oldDisc) {
-		for (int i = 0; i < this.nbItemInStore; i++) {
-			if (oldDisc == this.itemsInStore[i]) {
-				for (int j = i; j < this.nbItemInStore - 1; j++)
-				this.itemsInStore[j] = this.itemsInStore[j + 1];
-				this.itemsInStore[this.nbItemInStore - 1] = null;
-				this.nbItemInStore--;
-				System.out.println("Successfully removed DVD.");
-				return;
-			}
-		}
+		
+	public List<Media> getItemsInStore() {
+		return itemsInStore;
 	}
 
+	public void setItemsInStore(List<Media> itemsInStore) {
+		this.itemsInStore = itemsInStore;
+	}
+
+	public void addMedia(Media newMedia) {
+		if (itemsInStore.contains(newMedia)) {
+			System.out.println("Media is existed.");
+		}
+		else {
+			itemsInStore.add(newMedia);
+			System.out.println("Added succeccfully.");
+		}
+	}
 	
+	public void removeMedia(Media removeMedia) {
+		if (itemsInStore.contains(removeMedia)) {
+			itemsInStore.remove(removeMedia);
+			System.out.println("Removed successfully");
+		}
+		else {
+			System.out.println("Media is not existed.");
+		}
+	}
+	
+	public Media searchMediaByTitle(String title) {
+		for (Media i : itemsInStore) {
+			if (title.equals(i.getTitle())) {
+				System.out.println("The media is: " + i.toString());
+				return i;
+			}
+		}
+		System.out.println("Media's title is not found.");
+		return null;
+	}
+	
+	public Media searchMediaByID(int id) {
+		for (Media i : itemsInStore) {
+			if (id == i.getId()) {
+				System.out.println("The media is: " + i.toString());
+				return i;
+			}
+		}
+		System.out.println("Media's id is not found.");
+		return null;
+	}
+	
+	public void showStore() {
+		for (Media i:this.itemsInStore) {
+			System.out.println(i.toString());
+		}
+	}
 }
