@@ -1,0 +1,13 @@
+package hust.soict.dsai.swing;
+
+import java.awt.Frame;
+import java.awt.TextField;
+
+public class AWTAccumulator extends Frame {
+	private TextField tfInput;
+	private TextField tfOutput;
+	private int sum = 0;
+	
+	public AWTAccumulator()
+	
+}
